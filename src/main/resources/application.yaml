@@ -1,0 +1,28 @@
+spring:
+  datasource:
+    type: com.alibaba.druid.pool.DruidDataSource
+    dynamic:
+      primary: nacos_config
+      strict: false
+      datasource:
+        nacos_config:
+          url: jdbc:mysql://localhost:3306/nacos_config?useUnicode=true&characterEncoding=utf-8&zeroDateTimeBehavior=convertToNull&autoReconnect=true&failOverReadOnly=false&useSSL=false
+          username: root
+          password: mysql@1
+        activity:
+          url: jdbc:mysql://localhost/mysql?useUnicode=true&characterEncoding=UTF-8&useSSL=false
+          driverClassName: com.mysql.jdbc.Driver
+          username: root
+          password: mysql@1
+#        clickhouse:
+#          driver-class-name: com.clickhouse.jdbc.ClickHouseDriver
+#          # jdbc:clickhouse://ip:port,ip:port/xxx 配置格式
+#          url: jdbc:clickhouse://192.168.30.104:8123/test
+#          username: default
+#          password: root
+#        storage_statistic:
+#          driver-class-name: com.clickhouse.jdbc.ClickHouseDriver
+#          # jdbc:clickhouse://ip:port,ip:port/xxx 配置格式
+#          url: jdbc:clickhouse://192.168.30.104:8123/storage_statistic
+#          username: default
+#          password: root
