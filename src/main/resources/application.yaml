@@ -17,12 +17,12 @@ spring:
 #        clickhouse:
 #          driver-class-name: com.clickhouse.jdbc.ClickHouseDriver
 #          # jdbc:clickhouse://ip:port,ip:port/xxx 配置格式
-#          url: jdbc:clickhouse://192.168.30.104:8123/test
+#          url: jdbc:clickhouse://localhost:8123/test
 #          username: default
 #          password: root
 #        storage_statistic:
 #          driver-class-name: com.clickhouse.jdbc.ClickHouseDriver
 #          # jdbc:clickhouse://ip:port,ip:port/xxx 配置格式
-#          url: jdbc:clickhouse://192.168.30.104:8123/storage_statistic
+#          url: jdbc:clickhouse://localhost:8123/storage_statistic
 #          username: default
 #          password: root
