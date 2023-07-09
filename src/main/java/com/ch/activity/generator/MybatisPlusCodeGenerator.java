@@ -24,7 +24,7 @@ public class MybatisPlusCodeGenerator {
         String rootPackage="org.ch.test";//生成的entity、controller、service等包所在的公共上一级包路径全限定名
         String moduleName="province-sess-platfrom-xqxy";
         //数据库配置
-        String url="jdbc:mysql://123.60.166.121:3306/nacos_config?useSSL=false&characterEncoding=utf8";
+        String url="jdbc:mysql://localhost:3306/nacos_config?useSSL=false&characterEncoding=utf8";
         String driverClassName="com.mysql.jdbc.Driver";//或者com.mysql.cj.jdbc.Driver
         String username="root";
         String password="mysql@1";

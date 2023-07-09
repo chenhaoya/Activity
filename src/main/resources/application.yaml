@@ -1,19 +1,27 @@
 spring:
+  activiti:
+    #    databaseSchemaUpdate：数据库更新策略，其取值有四个：
+    #    flase：       默认值。activiti在启动时，会对比数据库表中保存的版本，如果没有表或者版本不匹配，将抛出异常。（生产环境常用）
+    #    true：        activiti会对数据库中所有表进行更新操作。如果表不存在，则自动创建。（开发时常用）
+    #    create_drop： 在activiti启动时创建表，在关闭时删除表（必须手动关闭引擎，才能删除表）。（单元测试常用）
+    #    drop-create： 在activiti启动时删除原来的旧表，然后在创建新表（不需要手动关闭引擎）。
+    database-schema-update: true
+    #    历史表检查
+    db-history-used: true
+    #    保存历史流程
+    #    none：不保存；
+    #    activity：保存流程实例和流程行为
+    #    audit：
+    history-level: full
+    #    检验流程文件
+    check-process-definitions: true
   datasource:
     type: com.alibaba.druid.pool.DruidDataSource
-    dynamic:
-      primary: nacos_config
-      strict: false
-      datasource:
-        nacos_config:
-          url: jdbc:mysql://localhost:3306/nacos_config?useUnicode=true&characterEncoding=utf-8&zeroDateTimeBehavior=convertToNull&autoReconnect=true&failOverReadOnly=false&useSSL=false
-          username: root
-          password: mysql@1
-        activity:
-          url: jdbc:mysql://localhost/mysql?useUnicode=true&characterEncoding=UTF-8&useSSL=false
-          driverClassName: com.mysql.jdbc.Driver
-          username: root
-          password: mysql@1
+    druid:
+      url: jdbc:mysql://localhost/activity?useUnicode=true&characterEncoding=UTF-8&useSSL=false&nullCatalogMeansCurrent=true
+      driverClassName: com.mysql.jdbc.Driver
+      username: root
+      password: mysql@1
 #        clickhouse:
 #          driver-class-name: com.clickhouse.jdbc.ClickHouseDriver
 #          # jdbc:clickhouse://ip:port,ip:port/xxx 配置格式
@@ -26,3 +34,10 @@ spring:
 #          url: jdbc:clickhouse://localhost:8123/storage_statistic
 #          username: default
 #          password: root
+logging:
+  level:
+#    org.springframework.web: DEBUG
+#    com.github.binarywang.demo.wx.mp: DEBUG
+#    me.chanjar.weixin: DEBUG
+    root: debug
+
