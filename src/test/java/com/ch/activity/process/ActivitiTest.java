@@ -116,12 +116,12 @@ public class ActivitiTest {
                 .desc()
                 .list();
         // 流程定义信息
-        list.forEach(e->{
-            log.info("流程定义 id：{}",e.getId());
-            log.info("流程定义 name：{}",e.getName());
-            log.info("流程定义 key：{}",e.getKey());
-            log.info("流程定义 version：{}",e.getVersion());
-            log.info("流程部署 id：{}",e.getDeploymentId());
+        list.forEach(e -> {
+            log.info("流程定义 id：{}", e.getId());
+            log.info("流程定义 name：{}", e.getName());
+            log.info("流程定义 key：{}", e.getKey());
+            log.info("流程定义 version：{}", e.getVersion());
+            log.info("流程部署 id：{}", e.getDeploymentId());
         });
     }
 
